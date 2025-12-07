@@ -151,7 +151,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',  # Парсинг JSON-данных
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'apps.core.authentication.CsrfExemptSessionAuthentication',
+        'apps.core.authentication.CsrfExemptSessionAuthentication', # в рамках проекта отключил csrf защиту
         'rest_framework.authentication.BasicAuthentication',
     ],
 }
