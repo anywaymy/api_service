@@ -1,3 +1,4 @@
+# Работа с доступом
 from rest_framework import permissions
 
 class IsUserOrReadOnly(permissions.BasePermission):
