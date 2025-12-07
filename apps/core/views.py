@@ -98,11 +98,11 @@ class AnswerCreateAPIView(generics.CreateAPIView):
         return Response({
             'question': question_serializer.data,
             'existing_answers': answer_serializer.data
-        })
+        }, status=status.HTTP_200_OK)
 
     def perform_create(self, serializer):
         question_id = self.kwargs.get('question_pk')
-        question = generics.get_object_or_404(Question, pk=question_id)
+        question = get_object_or_404(Question, pk=question_id)
         serializer.save(question=question)
 
 
