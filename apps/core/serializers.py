@@ -83,6 +83,9 @@ class QuestionSerializer(serializers.ModelSerializer):
     def validate_text(self, value):
         if not value.strip():
             raise serializers.ValidationError("Текст вопроса не может быть пустым")
+        elif value.isdigit():
+            raise serializers.ValidationError("Ваш текст состоит только из чисел. Добавьте что то разумное!")
+
         return value
 
 
