@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'api_application.wsgi.application'
 # }
 
 
-# Конфигурация БД
+#Конфигурация БД
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -151,7 +151,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',  # Парсинг JSON-данных
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        'apps.core.authentication.CsrfExemptSessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],
 }
