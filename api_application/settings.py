@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': config('POSTGRES_DB', default='api_app'),
         'USER': config('POSTGRES_USER', default='api_app'),
         'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': config('DB_HOST', default='db'),
+        'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', default='5432', cast=int),
         'ATOMIC_REQUESTS': True,
     }
