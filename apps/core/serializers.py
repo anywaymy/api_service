@@ -32,16 +32,15 @@ class UserLoginSerializer(serializers.Serializer):
         password = attrs.get('password')
 
         if username and password:
-            # authenticate должен получить request
             user = authenticate(
-                request=self.context.get('request'),  # ← ВАЖНО: передаём request
+                request=self.context.get('request'),
                 username=username,
                 password=password
             )
 
             if not user:
                 raise serializers.ValidationError(
-                    'Неверное имя пользователя или пароль',  # лучше общее сообщение
+                    'Неверное имя пользователя или пароль', 
                     code='authorization'
                 )
 
